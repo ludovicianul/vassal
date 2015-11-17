@@ -18,3 +18,6 @@ In order to connect to the server do:
     telnet ip_of_host_where_server_is_running 12345
     
 Start sending commands.
+
+# available commands
+Once connected to the server using a telnet client, just type '''?''' and you will get the list of all available commands.
