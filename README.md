@@ -20,4 +20,4 @@ In order to connect to the server do:
 Start sending commands.
 
 # available commands
-Once connected to the server using a telnet client, just type '''?''' and you will get the list of all available commands.
+Once connected to the server using a telnet client, just type ```?``` and you will get the list of all available commands.
