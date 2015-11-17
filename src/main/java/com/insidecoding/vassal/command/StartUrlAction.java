@@ -25,7 +25,7 @@ public class StartUrlAction extends VassalAction {
 
 	@Override
 	public String getCommandName() {
-		return "CHROME";
+		return "URL";
 	}
 
 }
