@@ -14,6 +14,7 @@ Simple java based remote server
 This will start a server accepting commands on port 12345.
 
 In order to connect to the server do:
+    
     telnet ip_of_host_where_server_is_running 12345
     
 Start sending commands.
