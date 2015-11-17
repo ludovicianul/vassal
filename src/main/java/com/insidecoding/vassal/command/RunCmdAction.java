@@ -11,7 +11,7 @@ import java.io.PrintWriter;
  * @author milie
  *
  */
-public class RunCmdAction extends PuppetAction {
+public class RunCmdAction extends VassalAction {
 
 	@Override
 	public void doLogic(PrintWriter writer, String... params) throws Exception {

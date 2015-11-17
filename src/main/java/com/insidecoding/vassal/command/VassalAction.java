@@ -2,7 +2,7 @@ package com.insidecoding.vassal.command;
 
 import java.io.PrintWriter;
 
-public abstract class PuppetAction {
+public abstract class VassalAction {
 
 	public void execute(PrintWriter writer, String... params) {
 		try {

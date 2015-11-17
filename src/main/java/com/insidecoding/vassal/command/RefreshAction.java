@@ -11,7 +11,7 @@ import java.io.PrintWriter;
  * @author milie
  *
  */
-public class RefreshAction extends PuppetAction {
+public class RefreshAction extends VassalAction {
 
 	@Override
 	public void doLogic(PrintWriter writer, String... params) throws Exception {

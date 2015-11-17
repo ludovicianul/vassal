@@ -10,7 +10,7 @@ import java.net.URI;
  * @author milie
  *
  */
-public class StartUrlAction extends PuppetAction {
+public class StartUrlAction extends VassalAction {
 
 	@Override
 	public void doLogic(PrintWriter writer, String... args) throws Exception {

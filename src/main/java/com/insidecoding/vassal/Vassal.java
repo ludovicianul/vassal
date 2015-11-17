@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 import com.insidecoding.vassal.command.Commands;
-import com.insidecoding.vassal.command.PuppetAction;
+import com.insidecoding.vassal.command.VassalAction;
 
 /**
  * This is an actual thread that will handle the incoming commands from
@@ -34,15 +34,13 @@ public class Vassal implements Runnable {
 
 				if (commands.length > 0) {
 					pw.println("Doing: " + commands[0]);
-					PuppetAction action = Commands.getAction(commands[0]);
-
-					if (commands[0] == null
-							|| "quit".equalsIgnoreCase(commands[0])) {
+					VassalAction action = Commands.getAction(commands[0]);
+					if ("quit".equalsIgnoreCase(commands[0])) {
 						pw.close();
 						br.close();
 						break;
 					} else if (action != null) {
-						System.out.println("Doing action: " + action);
+						System.out.println("Doing: " + action);
 						action.execute(pw, commands);
 					} else {
 						pw.println(commands[0] + " not supported");

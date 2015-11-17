@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * @author milie
  *
  */
-public class PressKeyAction extends PuppetAction {
+public class PressKeyAction extends VassalAction {
 
 	@Override
 	public void doLogic(PrintWriter writer, String... params) throws Exception {
