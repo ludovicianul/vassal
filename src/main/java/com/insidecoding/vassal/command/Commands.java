@@ -13,7 +13,9 @@ public enum Commands {
 			"type", new TypeKeysAction(),
 			"Will type the supplied string. Usage: type username"), HELP("?",
 			new DisplayUsageAction(),
-			"Will display the available commands. Usage: ?");
+			"Will display the available commands. Usage: ?"), SCREENSHOT(
+			"screenshot", new ScreencaptureAction(),
+			"Will take a screenshot and write it to the socket. Usage: screenshot");
 
 	private String usage;
 	private String command;

@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
  */
 public class Main {
 	private int port;
-	private final ExecutorService executor = Executors.newFixedThreadPool(10);
+	private final ExecutorService executor = Executors.newCachedThreadPool();
 
 	public Main(int port) {
 		this.port = port;

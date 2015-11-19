@@ -10,7 +10,7 @@ import java.net.URI;
  * @author milie
  *
  */
-public class StartUrlAction extends VassalAction {
+public class StartUrlAction extends VassalInteractiveAction {
 
 	@Override
 	public void doLogic(PrintWriter writer, String... args) throws Exception {

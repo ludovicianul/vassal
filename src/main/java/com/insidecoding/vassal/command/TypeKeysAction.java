@@ -13,7 +13,7 @@ import java.io.PrintWriter;
  * @author milie
  *
  */
-public class TypeKeysAction extends VassalAction {
+public class TypeKeysAction extends VassalInteractiveAction {
 
 	@Override
 	public void doLogic(PrintWriter writer, String... params) throws Exception {

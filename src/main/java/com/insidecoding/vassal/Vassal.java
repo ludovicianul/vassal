@@ -30,7 +30,14 @@ public class Vassal implements Runnable {
 			pw.println("Yes, Master: ");
 
 			while (true) {
-				String commands[] = br.readLine().split(" ");
+				String received = br.readLine();
+
+				// we make sure we interpret the backspace characters sent by
+				// some telnet clients
+				while (received.indexOf("\b") != -1) {
+					received = received.replaceAll("^\b+|[^\b]\b", "");
+				}
+				String commands[] = received.split(" ");
 
 				if (commands.length > 0) {
 					pw.println("Doing: " + commands[0]);
@@ -38,10 +45,11 @@ public class Vassal implements Runnable {
 					if ("quit".equalsIgnoreCase(commands[0])) {
 						pw.close();
 						br.close();
+						skt.close();
 						break;
 					} else if (action != null) {
 						System.out.println("Doing: " + action);
-						action.execute(pw, commands);
+						action.execute(skt.getOutputStream(), pw, commands);
 					} else {
 						pw.println(commands[0] + " not supported");
 					}

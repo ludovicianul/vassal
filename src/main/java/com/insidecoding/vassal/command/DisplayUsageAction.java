@@ -2,7 +2,7 @@ package com.insidecoding.vassal.command;
 
 import java.io.PrintWriter;
 
-public class DisplayUsageAction extends VassalAction {
+public class DisplayUsageAction extends VassalInteractiveAction {
 
 	@Override
 	public String getCommandName() {
