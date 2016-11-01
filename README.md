@@ -25,7 +25,7 @@ Start sending commands.
 
 # usage through Docker
     docker pull PREFIX/vassal
-    docker run -d -p 12345:12345 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix
+    docker run -d -p 12345:12345 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix PREFIX/vassal
     
 # issues
 If you have issues with X11 while running through Docker, please do a ```xhost +``` in order to make remote connections possible.
