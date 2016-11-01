@@ -7,7 +7,10 @@ Vassal is a simple security-free server that allows you to execute commands on a
 [![Build Status](https://snap-ci.com/ludovicianul/vassal/branch/master/build_image)](https://snap-ci.com/ludovicianul/vassal/branch/master)
 
 # build
-    gradle jar
+    mvn clean install
+    
+# build and push Docker image to registry
+    mvn clean install -Pdockerize -Dprefix=IMAGE_PREFIX -Ddocker.registry=URL_OF_DOCKER_REGISTRY
     
 # usage
     java -jar vassal.jar 12345
@@ -19,6 +22,13 @@ In order to connect to the server do:
     telnet ip_of_host_where_server_is_running 12345
     
 Start sending commands.
+
+# usage through Docker
+    docker pull PREFIX/vassal
+    docker run -d -p 12345:12345 -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix
+    
+# issues
+If you have issues with X11 while running through Docker, please do a ```xhost +``` in order to make remote connections possible.
 
 # available commands
 Once connected to the server using a telnet client, just type ```?``` and you will get the list of all available commands.
