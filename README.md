@@ -10,7 +10,7 @@ Vassal is a simple security-free server that allows you to execute commands on a
     mvn clean install
     
 # build and push Docker image to registry
-    mvn clean install -Pdockerize -Dprefix=IMAGE_PREFIX -Ddocker.registry=URL_OF_DOCKER_REGISTRY
+    mvn clean install -Pdockerize -Dprefix=PREFIX -Ddocker.registry=URL_OF_DOCKER_REGISTRY
     
 # usage
     java -jar vassal.jar 12345
