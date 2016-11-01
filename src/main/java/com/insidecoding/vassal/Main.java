@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
  */
 public class Main {
 	private int port;
-	private final ExecutorService executor = Executors.newCachedThreadPool();
+	private static final ExecutorService executor = Executors.newCachedThreadPool();
 
 	public Main(int port) {
 		this.port = port;
@@ -28,23 +28,24 @@ public class Main {
 	public void start() {
 		try (ServerSocket srvr = new ServerSocket(port);) {
 			System.out.println("Server started");
-			new Thread(new Runnable() {
-
-				@Override
-				public void run() {
-					while (true) {
+			new Thread(() -> {
+				while (true) {
+					try {
+						// this will keep the remote machine on
+						Robot robot = new Robot();
+						int i = 100;
+						robot.mouseMove(i++, i++);
+					} catch (Exception e) {
+						// just ignore the exception if headless environment
+					} finally {
 						try {
-							// this will keep the remote machine on
-							Robot robot = new Robot();
-							int i = 100;
-							robot.mouseMove(i++, i++);
 							Thread.sleep(15000);
-						} catch (Exception e) {
-							e.printStackTrace();
+						} catch (InterruptedException e) {
+							// ignore this also
 						}
 					}
-
 				}
+
 			}).start();
 
 			while (true) {
