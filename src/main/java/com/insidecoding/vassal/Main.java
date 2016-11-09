@@ -59,6 +59,10 @@ public class Main {
 	}
 
 	public static void main(String... args) {
-		new Main(Integer.parseInt(args[0])).start();
+		int port = 12345;
+		if (args.length == 1) {
+			port = Integer.parseInt(args[0]);
+		}
+		new Main(port).start();
 	}
 }
