@@ -63,9 +63,6 @@ public class Main {
 		if (args.length == 1) {
 			port = Integer.parseInt(args[0]);
 		}
-		if (System.getProperty("DISPLAY") == null) {
-			System.setProperty("DISPLAY", ":1");
-		}
 		new Main(port).start();
 	}
 }
