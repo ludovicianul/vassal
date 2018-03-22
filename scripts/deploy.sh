@@ -36,6 +36,3 @@ sudo /etc/init.d/vassal restart
 
 echo "Deploy on $MACHINE_NAME done"
 echo "-----------------------------------------------------------------------"
-
-
-clean install -Dpackaging=jar -DgeneratePom=true 
