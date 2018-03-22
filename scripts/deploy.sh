@@ -1,6 +1,9 @@
 #!/bin/bash
 
 MACHINE_NAME=$1
+
+cd ~/vassal
+
 TARGET_JAR_FILE=$(find target/vassal*.jar)
 
 if [ $# -lt 1 ]
@@ -9,7 +12,6 @@ if [ $# -lt 1 ]
     echo "USAGE: machine_name "
     exit 1
 fi
-
 
 
 if [ -z "$TARGET_JAR_FILE" ]
