@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MACHINE_NAME=$1
-JAR_FILE=$(find vassal*.jar)
+TARGET_JAR_FILE=$(find target/vassal*.jar)
 
 if [ $# -lt 1 ]
   then
@@ -12,7 +12,7 @@ fi
 
 
 
-if [ -z "$JAR_FILE" ]
+if [ -z "$TARGET_JAR_FILE" ]
   then
     echo "No Jar File found"
     exit 1
@@ -22,9 +22,13 @@ fi
 echo "-----------------------------------------------------------------------"
 echo "Deploy on $MACHINE_NAME"
 
+JAR_NAME=$(basename $TARGET_JAR_FILE)
+JAR_FILE=~/vassal/$JAR_NAME
+mv $TARGET_JAR_FILE $JAR_FILE
+
 chmod 777 $JAR_FILE
 
-sudo ln -sf  ~/vassal/$JAR_NAME /etc/init.d/vassal
+sudo ln -sf  $JAR_FILE /etc/init.d/vassal
 export DISPLAY=:1
 sudo /etc/init.d/vassal restart
 
