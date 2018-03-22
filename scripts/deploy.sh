@@ -4,7 +4,7 @@ MACHINE_NAME=$1
 
 cd ~/vassal
 
-TARGET_JAR_FILE=$(find target/vassal*.jar)
+TARGET_JAR_FILE=$(find src/main/resources/vassal*.jar)
 
 if [ $# -lt 1 ]
   then
@@ -36,3 +36,6 @@ sudo /etc/init.d/vassal restart
 
 echo "Deploy on $MACHINE_NAME done"
 echo "-----------------------------------------------------------------------"
+
+
+clean install -Dpackaging=jar -DgeneratePom=true 
