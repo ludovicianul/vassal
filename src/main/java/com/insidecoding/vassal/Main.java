@@ -18,6 +18,9 @@ public class Main {
 	private int port;
 	private static final ExecutorService executor = Executors.newCachedThreadPool();
 
+	static {
+        	System.setProperty("java.awt.headless", "false");
+        }
 	public Main(int port) {
 		this.port = port;
 	}
